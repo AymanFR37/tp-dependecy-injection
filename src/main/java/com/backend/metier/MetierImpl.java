@@ -4,11 +4,12 @@ import com.backend.dao.IDao;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("metier")
+@Service("metier") // Alias for @Component
 public class MetierImpl implements IMetier {
     // Couplage faible
     private IDao dao;
 
+    // Dependency injection with constructor instead of @Autowired
     public MetierImpl(@Qualifier("dao1") IDao dao) {
         this.dao = dao;
     }

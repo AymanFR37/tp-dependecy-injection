@@ -2,7 +2,7 @@ package com.backend.dao;
 
 import org.springframework.stereotype.Repository;
 
-@Repository("dao1")
+@Repository("dao1") // Alias for @Component
 public class DaoImpl implements IDao {
     @Override
     public double getData() {
