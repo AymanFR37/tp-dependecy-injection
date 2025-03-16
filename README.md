@@ -38,16 +38,9 @@ The project is structured to showcase how to decouple components and inject depe
 - **File**: `Pres2.java`
 - **Description**: Dependencies are loaded dynamically using a configuration file (config.txt).
 - **Example**:
-  ```java
-  Scanner scanner = new Scanner(new File("config.txt"));
-
-  String daoClassName = scanner.nextLine();
-  Class<?> cDao = Class.forName(daoClassName);
-  IDao dao = (IDao) cDao.newInstance();
-        
-  String metierClassName = scanner.nextLine();
-  Class<?> cMetier = Class.forName(metierClassName);
-  IMetier metier = (IMetier) cMetier.getConstructor(IDao.class).newInstance(dao);
+  ```txt
+    com.backend.dao.DaoImplV2
+    com.backend.metier.MetierImpl
 ### **3. Spring Framework (XML Configuration)**
 - **File**: `PresSpringXML.java`
 - **Description**: Dependencies are injected using Spring's XML configuration (config.xml).
